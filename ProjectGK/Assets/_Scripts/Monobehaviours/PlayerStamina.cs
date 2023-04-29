@@ -45,7 +45,8 @@ public class PlayerStamina : MonoBehaviour
 
     private void ImpulsePlayer()
     {
-        _rb.AddForce(new Vector3(0, _impulseForceValue, _impulseForceValue), ForceMode.Impulse);
+        //_rb.AddForce(new Vector3(0, _impulseForceValue, _impulseForceValue), ForceMode.Impulse);
+        _rb.velocity = new Vector3(0, _impulseForceValue, _impulseForceValue);
     }
 
     private void UpdateStaminaBar()
