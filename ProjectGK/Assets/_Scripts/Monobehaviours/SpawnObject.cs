@@ -15,7 +15,7 @@ public class SpawnObject : MonoBehaviour
     // zmienne
     private static List<GameObject> _arrSpawnedObject = new List<GameObject>();
     private static int _id = 0;
-    private int _size = 20,
+    private int _size = 65,
                 _currPos;
 
     private static bool _isDone = false;
@@ -23,7 +23,7 @@ public class SpawnObject : MonoBehaviour
     private float _rangeX,
                 _rangeY,
                 _rangeZ,
-                countPickUps = 5;
+                countPickUps = 3;
     private int _searchPref;
 
     private void Awake()
@@ -62,7 +62,7 @@ public class SpawnObject : MonoBehaviour
         // te zmienne s¹ do zmiany
         _rangeX = 5; // d³ugoœæ
         _rangeY = 75; // wysokoœæ
-        _rangeZ = 7.75f; // szerokoœæ
+        _rangeZ = 150f; // szerokoœæ
 
         for (int i = 0; i < countPickUps; i++)
         {
