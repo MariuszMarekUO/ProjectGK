@@ -55,6 +55,6 @@ public class PlayerController : MonoBehaviour
             _currentVelocity.x = 0;
             _rb.velocity = _currentVelocity;
         }
-        Debug.Log(_rb.velocity);
+        //Debug.Log(_rb.velocity);
     }
 }
