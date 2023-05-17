@@ -65,20 +65,20 @@ public class SpawnObject : MonoBehaviour
 
         // tworzenie, dodawanie do listy nowych elementów PickUp'ów oraz nadawanie nazwy
 
-        for(int i = 0; i < countPickUps; i++)
+        for (int i = 0; i < countPickUps; i++)
         {
             _variant = Random.RandomRange(1, 4);
 
-            switch(_variant)
+            switch (_variant)
             {
                 case 1:
-                    SpawnElements(clouds, lastPlatform, 100, 25);
+                    SpawnElements(clouds, lastPlatform, 100, 25, -90, 0);
                     break;
                 case 2:
-                    SpawnElements(airPickUps, lastPlatform, 75, 15);
+                    SpawnElements(airPickUps, lastPlatform, 75, 15, 0, 90);
                     break;
                 case 3:
-                    SpawnElements(groundPickUps, lastPlatform, 0, 0);
+                    SpawnElements(groundPickUps, lastPlatform, 0.5f, 0, 0, 0);
                     break;
                 default:
                     break;
@@ -86,7 +86,7 @@ public class SpawnObject : MonoBehaviour
         }
         _id++;
     }
-    void SpawnElements(GameObject[] arrObj, int lastPlatform, float maxH, float minH)
+    void SpawnElements(GameObject[] arrObj, int lastPlatform, float maxH, float minH, float rotX, float rotY)
     {
         _searchPref = Random.Range(0, arrObj.Length - 1);
 
@@ -94,7 +94,8 @@ public class SpawnObject : MonoBehaviour
                                              Random.Range(minH, maxH),
                                              Random.Range((_arrSpawnedObject[lastPlatform].transform.position.z - (_rangeX / 2)), (_arrSpawnedObject[lastPlatform].transform.position.z + (_rangeX / 2))));
 
-        var newPickUp = Instantiate(arrObj[_searchPref], randomPosition, Quaternion.identity);
+        // Quaternion zmieniæ póŸniej tak ¿eby nie trzeba by³o tego w kodzie ustawiaæ
+        var newPickUp = Instantiate(arrObj[_searchPref], randomPosition, Quaternion.Euler(new Vector3(rotX, rotY, 0)));
         newPickUp.transform.parent = _arrSpawnedObject[lastPlatform].transform;
     }
 
