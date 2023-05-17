@@ -191,8 +191,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnToObject: {fileID: 5254303736736195680}
   firstObject: {fileID: 0}
-  pickUps:
+  clouds:
+  - {fileID: 8001997219341763647, guid: 6727c1ccd7d431b4da68dfe8b7c6fb32, type: 3}
+  - {fileID: 6321655338968545171, guid: abdf8e0ff34721f4e8383598490c2e83, type: 3}
+  - {fileID: 7057136191481304216, guid: 7188cfddbbea9a748ad7927ddbf7fd30, type: 3}
+  - {fileID: 8243437811587817211, guid: d27953c3cc6c5b045b1b7261ef40e70d, type: 3}
+  - {fileID: 6480717185569824660, guid: 40e7d8ee35a31374db26d711d833cfd7, type: 3}
+  - {fileID: 7861023273502149980, guid: 681cf2f89ebb47147850142504affaf4, type: 3}
+  - {fileID: 5387641935988163522, guid: d05243a10a6a9aa488d56780ddb23525, type: 3}
+  airPickUps:
   - {fileID: 2269092574772930679, guid: 6bd2cbfdf53a79f4ba76022dd3109c39, type: 3}
-  - {fileID: 7596082330528443257, guid: c67a8b81737b8c546bdd688e0c796325, type: 3}
-  - {fileID: 5357600780159258573, guid: 1194307e3de93c342b5a051581da50b1, type: 3}
-  - {fileID: 7106217301489062402, guid: 54b79303338a2484b90e94a2c76f9c30, type: 3}
+  groundPickUps:
+  - {fileID: 919132149155446097, guid: a2fe028cbf85be5428267b7573f34c78, type: 3}

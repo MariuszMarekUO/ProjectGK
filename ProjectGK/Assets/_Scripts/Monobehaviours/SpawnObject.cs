@@ -9,20 +9,25 @@ public class SpawnObject : MonoBehaviour
     // do spawnu
     [SerializeField] GameObject spawnToObject;
     [SerializeField] GameObject firstObject;
-    [SerializeField] GameObject[] pickUps;
+    //[SerializeField] GameObject[] pickUps;
 
+
+    [SerializeField] GameObject[] clouds;
+    [SerializeField] GameObject[] airPickUps;
+    [SerializeField] GameObject[] groundPickUps;
 
     // zmienne
     private static List<GameObject> _arrSpawnedObject = new List<GameObject>();
     private static int _id = 0;
     private int _size = 65,
-                _currPos;
+                _currPos,
+                _variant;
 
     private static bool _isDone = false;
 
-    private float _rangeX,
-                _rangeY,
-                _rangeZ,
+    private float _rangeX = 5,
+                _rangeY = 75,
+                _rangeZ = 150,
                 countPickUps = 3;
     private int _searchPref;
 
@@ -59,23 +64,38 @@ public class SpawnObject : MonoBehaviour
         _arrSpawnedObject[lastPlatform].name = "Obiekt " + _id;
 
         // tworzenie, dodawanie do listy nowych elementów PickUp'ów oraz nadawanie nazwy
-        // te zmienne s¹ do zmiany
-        _rangeX = 5; // d³ugoœæ
-        _rangeY = 75; // wysokoœæ
-        _rangeZ = 150f; // szerokoœæ
 
-        for (int i = 0; i < countPickUps; i++)
+        for(int i = 0; i < countPickUps; i++)
         {
-            _searchPref = Random.Range(0, pickUps.Length - 1);
+            _variant = Random.RandomRange(1, 4);
 
-            Vector3 randomPosition = new Vector3(Random.Range(-(_rangeZ / 2), (_rangeZ / 2)),
-                                                 Random.Range(0, _rangeY),
-                                                 Random.Range((_arrSpawnedObject[lastPlatform].transform.position.z - (_rangeX / 2)), (_arrSpawnedObject[lastPlatform].transform.position.z + (_rangeX / 2))));
-
-            var newPickUp = Instantiate(pickUps[_searchPref], randomPosition, Quaternion.identity);
-            newPickUp.transform.parent = _arrSpawnedObject[lastPlatform].transform;
+            switch(_variant)
+            {
+                case 1:
+                    SpawnElements(clouds, lastPlatform, 100, 25);
+                    break;
+                case 2:
+                    SpawnElements(airPickUps, lastPlatform, 75, 15);
+                    break;
+                case 3:
+                    SpawnElements(groundPickUps, lastPlatform, 0, 0);
+                    break;
+                default:
+                    break;
+            }
         }
         _id++;
+    }
+    void SpawnElements(GameObject[] arrObj, int lastPlatform, float maxH, float minH)
+    {
+        _searchPref = Random.Range(0, arrObj.Length - 1);
+
+        Vector3 randomPosition = new Vector3(Random.Range(-(_rangeZ / 2), (_rangeZ / 2)),
+                                             Random.Range(minH, maxH),
+                                             Random.Range((_arrSpawnedObject[lastPlatform].transform.position.z - (_rangeX / 2)), (_arrSpawnedObject[lastPlatform].transform.position.z + (_rangeX / 2))));
+
+        var newPickUp = Instantiate(arrObj[_searchPref], randomPosition, Quaternion.identity);
+        newPickUp.transform.parent = _arrSpawnedObject[lastPlatform].transform;
     }
 
     private void DeleteObject(int _currPos)
