@@ -1,12 +1,12 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameMenager : MonoBehaviour
 {
     [SerializeField] ScoreMenager scoreMenager;
     [SerializeField] DistanceMenager distanceMenager;
-    //[SerializeField] GameObject usernameInput;
-    public string text;
+    [SerializeField] TMP_InputField usernameInput;
     [SerializeField] GameObject GameOver;
     [SerializeField] GameObject GameUI;
     [SerializeField] TextMeshProUGUI scoreText;
@@ -26,12 +26,11 @@ public class GameMenager : MonoBehaviour
     public void AddButton()
     {
         Debug.Log("add");
-        //var name = usernameInput.GetComponent<InputField>().text;
-        Debug.Log("text");
+        string name = usernameInput.text;
+        Debug.Log(name);
         var distance = distanceMenager.Distance;
-        Debug.Log("distance");
-        Score score = new Score(text, distance);
+        Debug.Log(distance);
+        Score score = new Score(name, distance);
         scoreMenager.AddNewScore(score);
     }
-
 }

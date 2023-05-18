@@ -8,6 +8,17 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void OpenLeaderboard()
+    {
+        SceneManager.LoadScene("Leaderboard");
+    }
+
+    public void OpenMenu()
+    {
+        SceneManager.LoadScene("Menu");
+        Debug.Log("sef");
+    }
+
     public void QuitGame()
     {
         Application.Quit();

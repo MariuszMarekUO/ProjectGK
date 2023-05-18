@@ -44,7 +44,6 @@ public class ScoreMenager : MonoBehaviour
             {
                 onScoreListChanged.Invoke(scores);
             }
-
         }
 
         else
@@ -67,7 +66,6 @@ public class ScoreMenager : MonoBehaviour
                     break;
                 }
             }
-        }
-        
+        }      
     }
 }
