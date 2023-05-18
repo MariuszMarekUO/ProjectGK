@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _rb;
     private float _moveHorizontal;
 
-    private float _movementSpeed;
+    [SerializeField] private float _movementSpeed;
 
     Vector3 right;
     Vector3 rightRelativeHorizontal;
@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        _movementSpeed = 1f;
     }
 
 
