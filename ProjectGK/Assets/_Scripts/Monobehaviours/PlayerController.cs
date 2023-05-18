@@ -15,7 +15,9 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 _currentVelocity;
 
+    [SerializeField] GameMenager gameMenager;
 
+    
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -55,6 +57,15 @@ public class PlayerController : MonoBehaviour
             _currentVelocity.x = 0;
             _rb.velocity = _currentVelocity;
         }
-        Debug.Log(_rb.velocity);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Podloga")
+        {
+            _rb.isKinematic = true;
+
+            gameMenager.EndGame();
+        }
     }
 }

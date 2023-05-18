@@ -1,21 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class DistanceMenager : MonoBehaviour
 {
-    public float distance;
-    public float startPosition;
-    public Text distanceText;
-
-    private void Start()
+    private float distance;
+    public float Distance
     {
-        startPosition = transform.position.x;
+        get { return distance; }
     }
+    private decimal _d;
+    public decimal D
+    {
+        get { return _d; }
+    }
+
+    private Rigidbody _rb;
+    [SerializeField] TextMeshProUGUI distanceText;
+
     void Update()
     {
-        distance = transform.position.x - startPosition;
-        distanceText.text = "Distance: " + distance;
+        distance = transform.position.z;
+        _d = Decimal.Round(((decimal)(distance)), 2);
+        distanceText.text = "Distance: " + _d;
     }
 }
