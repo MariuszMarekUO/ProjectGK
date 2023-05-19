@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.Playables;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,8 +17,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerStamina _playerStamina;
     [SerializeField] private ParticleSystem _fireParticle;
     [SerializeField] private ParticleSystem _smokeParticle;
+    [SerializeField] private Slider _powerSlider;
+    [SerializeField] private TextMeshProUGUI _helperText;
 
     private int _spaceBarCount = 0;
+    private bool _animationRunning = false;
 
     private void Awake()
     {
@@ -25,18 +30,23 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !_animationRunning)
         {
             switch (_spaceBarCount)
             {
                 case 0:
                     StartGame();
+                    _helperText.text = "";
+                    _animationRunning = true;
                     break;
                 case 1:
                     StartCoroutine(_cannonController.RotateCannon());
+                    _helperText.text = "PRESS 'SPACE' TO CHOOSE ANGLE";
                     break;
                 case 2:
                     _cannonController._playerInCannon = false;
+                    _powerSlider.gameObject.SetActive(true);
+                    _helperText.text = "PRESS 'SPACE' TO CHOOSE POWER";
                     break;
                 case 3:
                     _cannonController._playerInCannon = false;
@@ -44,6 +54,8 @@ public class GameManager : MonoBehaviour
                     _smokeParticle.Play();
                     _playerController.enabled = true;
                     _playerStamina.enabled = true;
+                    _helperText.gameObject.SetActive(false);
+                    _powerSlider.gameObject.SetActive(false);
                     break;
             }
             _spaceBarCount++;
@@ -60,5 +72,11 @@ public class GameManager : MonoBehaviour
     public void ChangeCameraPriority(int value)
     {
         _cannonCam.m_Priority = value;
+    }
+
+    public void ChangeAnimationRunning()
+    {
+        _helperText.text = "PRESS 'SPACE' TO RUN CANNON";
+        _animationRunning = !_animationRunning;
     }
 }

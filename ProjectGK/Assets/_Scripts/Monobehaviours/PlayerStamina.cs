@@ -10,8 +10,8 @@ public class PlayerStamina : MonoBehaviour
 
     [SerializeField] private float _impulseForceValue;
 
-    private float _maxStamina;
-    private float _stamina;
+    [SerializeField] private float _maxStamina;
+    [SerializeField] private float _stamina;
 
     private bool _isRegenerating;
 

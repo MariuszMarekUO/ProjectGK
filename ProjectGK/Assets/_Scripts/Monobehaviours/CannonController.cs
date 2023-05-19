@@ -28,6 +28,8 @@ public class CannonController : MonoBehaviour
 
     private Vector3 _fireDirection;
 
+
+    private Transform _defaultPlayerParent;
     private Rigidbody _rb;
     private void Awake()
     {
@@ -50,15 +52,15 @@ public class CannonController : MonoBehaviour
             {
                 _value *= -1;
             }
-            powerText.text = "Power: " + _powerValue.ToString();
             _powerBar.value = _powerValue;
             yield return new WaitForSeconds(0.01f);
         }
         _fireDirection *= _powerValue/2;
-        _rb.gameObject.transform.SetParent(null);
+        Debug.Log(_rb.gameObject);
+        _rb.gameObject.transform.parent = _defaultPlayerParent;
+        //_rb.gameObject.transform.SetParent(null);
         _rb.isKinematic = false;
         _rb.velocity = _fireDirection;
-        Debug.DrawRay(_cannonTube.transform.position, _fireDirection, Color.red, 30);
     }
 
     private float timer = 0f;
@@ -81,6 +83,7 @@ public class CannonController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            _defaultPlayerParent = other.transform.parent;
             other.transform.parent = _cannonTube.transform;
             _rb = other.GetComponent<Rigidbody>();
             _playerInCannon = true;
