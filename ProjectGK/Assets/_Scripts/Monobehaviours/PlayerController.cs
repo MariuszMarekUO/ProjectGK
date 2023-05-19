@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         MoveRelativeToCamera();
+        transform.rotation.SetLookRotation(_rb.velocity);
     }
 
     private void MoveRelativeToCamera()

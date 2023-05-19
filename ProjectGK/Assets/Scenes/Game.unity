@@ -400,7 +400,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -5941,7 +5941,7 @@ MonoBehaviour:
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 2
-  m_DeadZoneWidth: 1
+  m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 1
@@ -6529,7 +6529,11 @@ MonoBehaviour:
   _playerCam: {fileID: 765010120}
   _director: {fileID: 963194231}
   _cannonController: {fileID: 919132149082068051}
-  _player: {fileID: 0}
+  _player: {fileID: 1188239372}
+  _playerController: {fileID: 1188239374}
+  _playerStamina: {fileID: 1188239373}
+  _fireParticle: {fileID: 638745386}
+  _smokeParticle: {fileID: 74119260}
 --- !u!114 &392617828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8146,7 +8150,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -13213,7 +13217,7 @@ MonoBehaviour:
   m_Priority: 50
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 1188239377}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 1188239377}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5
@@ -13240,7 +13244,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765010119}
   m_LocalRotation: {x: 0.116180934, y: 0.00000013747467, z: -0.000000016080834, w: 0.9932281}
-  m_LocalPosition: {x: 0.020999461, y: 1.7335767, z: -0.39300802}
+  m_LocalPosition: {x: 0.02099937, y: 1.7335765, z: -0.3930073}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14384,9 +14388,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958769739}
   m_LocalRotation: {x: -0, y: 0.8191521, z: 0.57357645, w: 0}
-  m_LocalPosition: {x: 0, y: 0.06909327, z: 0.018075934}
+  m_LocalPosition: {x: 0, y: 0.0502, z: 0.0137}
   m_LocalScale: {x: 0.09999996, y: 0.09999998, z: 0.09999998}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 638745387}
   - {fileID: 74119261}
@@ -14641,8 +14645,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b16e7ac9f671bc46922c24e5a3689e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 1188239374}
-  playerStamina: {fileID: 1188239373}
   cannonCollider: {fileID: 919132149082068052}
 --- !u!1 &967138563
 GameObject:
@@ -15505,7 +15507,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.455
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -15598,19 +15600,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b032e003bcf66ec4798792d8d0255134, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2000001
+      value: 0.20000015
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b032e003bcf66ec4798792d8d0255134, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 0.20000003
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b032e003bcf66ec4798792d8d0255134, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.2000001
+      value: 0.20000015
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b032e003bcf66ec4798792d8d0255134, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.021
+      value: 0.020999908
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b032e003bcf66ec4798792d8d0255134, type: 3}
       propertyPath: m_LocalPosition.y
@@ -15618,7 +15620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b032e003bcf66ec4798792d8d0255134, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.553
+      value: 1.5530007
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b032e003bcf66ec4798792d8d0255134, type: 3}
       propertyPath: m_LocalRotation.w
@@ -15626,7 +15628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b032e003bcf66ec4798792d8d0255134, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b032e003bcf66ec4798792d8d0255134, type: 3}
       propertyPath: m_LocalRotation.y
@@ -15634,7 +15636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b032e003bcf66ec4798792d8d0255134, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b032e003bcf66ec4798792d8d0255134, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15682,7 +15684,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188239372}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 358c481b8a19ec14aacf806bcf8c064f, type: 3}
   m_Name: 
@@ -15696,7 +15698,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188239372}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0729f3be87c481746b15c6934a3bacae, type: 3}
   m_Name: 
@@ -15715,7 +15717,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 1
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 48
   m_CollisionDetection: 1
 --- !u!136 &1188239376
@@ -15747,7 +15749,7 @@ Animator:
   m_GameObject: {fileID: 1188239372}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dc6ab0104afa7bb49bd128d903808946, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -19090,7 +19092,7 @@ MonoBehaviour:
   _cannonTube: {fileID: 1415716501}
   _maxRotation: -50
   _minRotation: -10
-  _rotationSpeed: 0.84
+  _rotationSpeed: 1.5
   _xyz: {x: 0, y: 0.15, z: 0}
   _playerInCannon: 1
 --- !u!65 &919132149082068052
