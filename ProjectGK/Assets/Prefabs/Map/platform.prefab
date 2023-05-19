@@ -80,6 +80,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5254303736736195683}
     m_Modifications:
+    - target: {fileID: 4742580426119077960, guid: 443245ea1af84de4695a13b7c0a6057b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -20.05
+      objectReference: {fileID: 0}
     - target: {fileID: 5597814640171483808, guid: 443245ea1af84de4695a13b7c0a6057b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -132,8 +136,44 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterLine
       objectReference: {fileID: 0}
+    - target: {fileID: 5981715650771688438, guid: 443245ea1af84de4695a13b7c0a6057b, type: 3}
+      propertyPath: m_TagString
+      value: Water
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 443245ea1af84de4695a13b7c0a6057b, type: 3}
+--- !u!1 &104331993761700930 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5981715650771688438, guid: 443245ea1af84de4695a13b7c0a6057b, type: 3}
+  m_PrefabInstance: {fileID: 5940806272998426548}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &5569987306988395971
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104331993761700930}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
+--- !u!65 &1846656497555076984
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104331993761700930}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 320, y: 1, z: 11}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &2296436781267862804 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5597814640171483808, guid: 443245ea1af84de4695a13b7c0a6057b, type: 3}

@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 _currentVelocity;
 
+    [SerializeField] GameMenager gameMenager;
 
     private void Start()
     {
@@ -56,5 +57,15 @@ public class PlayerController : MonoBehaviour
             _rb.velocity = _currentVelocity;
         }
         //Debug.Log(_rb.velocity);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Water")
+        {
+            _rb.isKinematic = true;
+
+            gameMenager.EndGame();
+        }
     }
 }
