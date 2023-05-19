@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.116250366, g: 0.42375848, b: 0.72965276, a: 1}
+  m_IndirectSpecularColor: {r: 0.116265155, g: 0.4241314, b: 0.7300708, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17632,6 +17632,8 @@ MonoBehaviour:
   powerText: {fileID: 101065750}
   _powerBar: {fileID: 2110426565}
   _cannonTube: {fileID: 1415716501}
+  smoke: {fileID: 74119258}
+  fire: {fileID: 638745384}
   _maxRotation: -50
   _minRotation: -10
   _rotationSpeed: 1.5
@@ -17800,9 +17802,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5254303736736195680, guid: 369085356ee1088479bafbce052a2458, type: 3}
     - target: {fileID: 5254303736736195681, guid: 369085356ee1088479bafbce052a2458, type: 3}
+      propertyPath: islands.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254303736736195681, guid: 369085356ee1088479bafbce052a2458, type: 3}
       propertyPath: pickUps.Array.size
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5254303736736195681, guid: 369085356ee1088479bafbce052a2458, type: 3}
+      propertyPath: obstacle.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254303736736195681, guid: 369085356ee1088479bafbce052a2458, type: 3}
+      propertyPath: islands.Array.data[0]
+      value: 
+      objectReference: {fileID: 7104635040738746935, guid: 3e5a51fb4c901a64093391727c6473ae, type: 3}
+    - target: {fileID: 5254303736736195681, guid: 369085356ee1088479bafbce052a2458, type: 3}
+      propertyPath: islands.Array.data[1]
+      value: 
+      objectReference: {fileID: 5474834073670642567, guid: ff12f356a754c9746b2464c70bb79aff, type: 3}
     - target: {fileID: 5254303736736195681, guid: 369085356ee1088479bafbce052a2458, type: 3}
       propertyPath: pickUps.Array.data[0]
       value: 
@@ -17819,6 +17837,10 @@ PrefabInstance:
       propertyPath: pickUps.Array.data[3]
       value: 
       objectReference: {fileID: 7106217301489062402, guid: 54b79303338a2484b90e94a2c76f9c30, type: 3}
+    - target: {fileID: 5254303736736195681, guid: 369085356ee1088479bafbce052a2458, type: 3}
+      propertyPath: obstacle.Array.data[0]
+      value: 
+      objectReference: {fileID: 5547187224531020035, guid: d3cab2927f8927c49bbbc8763b9b5b91, type: 3}
     - target: {fileID: 5254303736736195681, guid: 369085356ee1088479bafbce052a2458, type: 3}
       propertyPath: groundPickUps.Array.data[0]
       value: 

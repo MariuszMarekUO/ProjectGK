@@ -9,19 +9,22 @@ public class SpawnObject : MonoBehaviour
     // do spawnu
     [SerializeField] GameObject spawnToObject;
     [SerializeField] GameObject firstObject;
-    //[SerializeField] GameObject[] pickUps;
 
 
     [SerializeField] GameObject[] clouds;
     [SerializeField] GameObject[] airPickUps;
     [SerializeField] GameObject[] groundPickUps;
+    [SerializeField] GameObject[] obstacle;
+    [SerializeField] GameObject[] islands;
 
     // zmienne
     private static List<GameObject> _arrSpawnedObject = new List<GameObject>();
     private static int _id = 0;
     private int _size = 65,
                 _currPos,
-                _variant;
+                _variant,
+                _probabilityObstacle, 
+                _probabilityIslands;
 
     private static bool _isDone = false;
 
@@ -64,7 +67,6 @@ public class SpawnObject : MonoBehaviour
         _arrSpawnedObject[lastPlatform].name = "Obiekt " + _id;
 
         // tworzenie, dodawanie do listy nowych elementów PickUp'ów oraz nadawanie nazwy
-
         for (int i = 0; i < countPickUps; i++)
         {
             _variant = Random.RandomRange(1, 4);
@@ -78,12 +80,27 @@ public class SpawnObject : MonoBehaviour
                     SpawnElements(airPickUps, lastPlatform, 75, 15, 0, 90);
                     break;
                 case 3:
-                    SpawnElements(groundPickUps, lastPlatform, 0.5f, 0, 0, 0);
+                    SpawnElements(groundPickUps, lastPlatform, 0.35f, 0, 0, 0);
                     break;
                 default:
                     break;
             }
         }
+
+        // losowe generowanie przeszkód
+        _probabilityObstacle = Random.RandomRange(1, 11);
+        if(_probabilityObstacle == 1)
+        {
+            SpawnElements(obstacle, lastPlatform, 100, 0.35f, 0, 0);
+        }
+
+        // losowe generowanie dodatkowych wysp
+        _probabilityIslands = Random.RandomRange(1, 5);
+        if(_probabilityIslands == 1)
+        {
+            SpawnElements(islands, lastPlatform, 0.35f, 0, 0, 0);
+        }
+
         _id++;
     }
     void SpawnElements(GameObject[] arrObj, int lastPlatform, float maxH, float minH, float rotX, float rotY)

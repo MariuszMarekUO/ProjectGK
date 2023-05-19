@@ -10,6 +10,10 @@ public class CannonController : MonoBehaviour
     [SerializeField] private Slider _powerBar;
     [SerializeField] private GameObject _cannonTube;
 
+    // animacja wystrza³u
+    [SerializeField] GameObject smoke;
+    [SerializeField] GameObject fire;
+
     private float _maxPower = 100f;
     private float _powerValue;
     private float _value = 1f;
@@ -25,6 +29,11 @@ public class CannonController : MonoBehaviour
     private Vector3 _fireDirection;
 
     private Rigidbody _rb;
+    private void Awake()
+    {
+        smoke.SetActive(false);
+        fire.SetActive(false);
+    }
     private void Start()
     {
         _powerValue = 0;
@@ -83,6 +92,9 @@ public class CannonController : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             _playerInCannon = false;
+
+            smoke.SetActive(true);
+            fire.SetActive(true);
         }
     }
 }

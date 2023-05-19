@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1463354642421419017}
   - component: {fileID: 558696701493534269}
   - component: {fileID: 3702839686902120061}
+  - component: {fileID: -8039014638376470833}
   m_Layer: 0
   m_Name: cloud4
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8243437811587817211}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 1.6736195, y: 2.3189063, z: 0.013931554}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 300, y: 300, z: 300}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -97,3 +98,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.017725348, y: 0.0114252055, z: 0.015695907}
   m_Center: {x: 0.000000035762785, y: -0.0007036314, z: 0.0014313358}
+--- !u!114 &-8039014638376470833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8243437811587817211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77eb1f15b1a234e6085b3002eb85d8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 25
