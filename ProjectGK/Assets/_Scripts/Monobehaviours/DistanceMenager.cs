@@ -4,31 +4,33 @@ using UnityEngine;
 
 public class DistanceMenager : MonoBehaviour
 {
-    private bool notYet = true;
-    private float distance;
+    [SerializeField] TextMeshProUGUI distanceText;
+
+    private float _startposition;
+
+    private float _distance;
+
     public float Distance
     {
-        get { return distance; }
-    }
-    private decimal _d;
-    public decimal D
-    {
-        get { return _d; }
+        get { return _distance; }
     }
 
-    private Rigidbody _rb;
-    [SerializeField] TextMeshProUGUI distanceText;
+    private decimal _distanceDec;
+
+    public decimal DistanceDec
+    {
+        get { return _distanceDec; }
+    }
+
+    private void Awake()
+    {
+        _startposition = transform.position.z;
+    }
 
     void Update()
     {
-        if (notYet) { return; }
-        distance = transform.position.z;
-        _d = Decimal.Round(((decimal)(distance)), 2);
-        distanceText.text = "Distance: " + _d;
-    }
-
-    public void AllowDistance()
-    {
-        notYet = false;
+        _distance = _startposition - transform.position.z;
+        _distanceDec = Decimal.Round(((decimal)(_distance)), 2);
+        distanceText.text = "Distance: " + _distanceDec;
     }
 }

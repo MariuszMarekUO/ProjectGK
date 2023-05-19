@@ -16,7 +16,6 @@ public class MainMenu : MonoBehaviour
     public void OpenMenu()
     {
         SceneManager.LoadScene("Menu");
-        Debug.Log("sef");
     }
 
     public void QuitGame()

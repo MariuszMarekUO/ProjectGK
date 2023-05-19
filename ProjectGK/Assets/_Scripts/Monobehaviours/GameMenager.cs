@@ -20,16 +20,13 @@ public class GameMenager : MonoBehaviour
     {
         GameUI.SetActive(false);
         GameOver.SetActive(true);
-        scoreText.text = (distanceMenager.D).ToString();
+        scoreText.text = (distanceMenager.DistanceDec).ToString();
     }
 
     public void AddButton()
     {
-        Debug.Log("add");
         string name = usernameInput.text;
-        Debug.Log(name);
         var distance = distanceMenager.Distance;
-        Debug.Log(distance);
         Score score = new Score(name, distance);
         scoreMenager.AddNewScore(score);
     }
