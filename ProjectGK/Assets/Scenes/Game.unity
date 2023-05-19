@@ -19595,6 +19595,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: firstPlatform
       objectReference: {fileID: 0}
+    - target: {fileID: 5254303736736195680, guid: 369085356ee1088479bafbce052a2458, type: 3}
+      propertyPath: m_TagString
+      value: DONTDESTROY
+      objectReference: {fileID: 0}
     - target: {fileID: 5254303736736195681, guid: 369085356ee1088479bafbce052a2458, type: 3}
       propertyPath: firstObject
       value: 

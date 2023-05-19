@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Slingshot
   - Water
+  - DONTDESTROY
   layers:
   - Default
   - TransparentFX
