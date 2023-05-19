@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayableDirector _director;
     [SerializeField] private CannonController _cannonController;
     [SerializeField] private GameObject _player;
+    [SerializeField] private PlayerController _playerController;
+    [SerializeField] private PlayerStamina _playerStamina;
+    [SerializeField] private ParticleSystem _fireParticle;
+    [SerializeField] private ParticleSystem _smokeParticle;
 
     private int _spaceBarCount = 0;
 
@@ -36,7 +40,10 @@ public class GameManager : MonoBehaviour
                     break;
                 case 3:
                     _cannonController._playerInCannon = false;
-                    _playerCam.m_Follow = _player.transform;
+                    _fireParticle.Play();
+                    _smokeParticle.Play();
+                    _playerController.enabled = true;
+                    _playerStamina.enabled = true;
                     break;
             }
             _spaceBarCount++;
