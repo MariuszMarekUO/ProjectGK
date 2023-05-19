@@ -26,7 +26,7 @@ public class SpawnObject : MonoBehaviour
                 _probabilityObstacle, 
                 _probabilityIslands;
 
-    private static bool _isDone = false;
+    private bool _isDone = false;
 
     private float _rangeX = 5,
                 _rangeY = 75,
@@ -34,15 +34,17 @@ public class SpawnObject : MonoBehaviour
                 countPickUps = 3;
     private int _searchPref;
 
-    private void Awake()
+    private void Start()
     {
-        firstObject = transform.gameObject;
+        Debug.Log(firstObject);
+        Debug.Log(!_isDone);
+
         // pocz¹tkowe spawnienie elementów
         if ((firstObject != null) && !_isDone)
         {
             Debug.Log("WYKONA£O SIE");
             _arrSpawnedObject.Add(firstObject);
-            _arrSpawnedObject[0].name = "Obiekt " + (-1);
+            //_arrSpawnedObject[0].name = "Obiekt " + (-1);
             _isDone = true;
 
             for (int i = 0; i < _size; i++)
@@ -50,6 +52,8 @@ public class SpawnObject : MonoBehaviour
                 Spawn();
             }
         }
+        Debug.Log("WYKONA£O SIE 2");
+
     }
 
     private void OnTriggerEnter(Collider other)
