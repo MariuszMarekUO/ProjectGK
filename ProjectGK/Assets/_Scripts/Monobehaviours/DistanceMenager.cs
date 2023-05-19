@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DistanceMenager : MonoBehaviour
 {
+    private bool notYet = true;
     private float distance;
     public float Distance
     {
@@ -20,8 +21,14 @@ public class DistanceMenager : MonoBehaviour
 
     void Update()
     {
+        if (notYet) { return; }
         distance = transform.position.z;
         _d = Decimal.Round(((decimal)(distance)), 2);
         distanceText.text = "Distance: " + _d;
+    }
+
+    public void AllowDistance()
+    {
+        notYet = false;
     }
 }

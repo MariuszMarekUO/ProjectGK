@@ -37,8 +37,11 @@ public class SpawnObject : MonoBehaviour
     private void Awake()
     {
         // pocz¹tkowe spawnienie elementów
-        if ((firstObject != null) && !_isDone)
-        {
+
+        //Debug.Log((firstObject != null));
+        //Debug.Log(!_isDone);
+        //if ((firstObject != null))
+        //{
             _arrSpawnedObject.Add(firstObject);
             _arrSpawnedObject[0].name = "Obiekt " + (-1);
             _isDone = true;
@@ -47,7 +50,9 @@ public class SpawnObject : MonoBehaviour
             {
                 Spawn();
             }
-        }
+            _arrSpawnedObject.RemoveAt(0);
+            Debug.Log("PRZECHODZI TU");
+        //}
     }
 
     private void OnTriggerEnter(Collider other)
@@ -121,8 +126,8 @@ public class SpawnObject : MonoBehaviour
         // usuwanie zbêdnych elementów (w if jest ustawione ¿e usuwa 3 element koñcowy tablicy)
         if (_currPos == 3)
         {
-            Destroy(_arrSpawnedObject[0]);
-            _arrSpawnedObject.RemoveAt(0);
+                Destroy(_arrSpawnedObject[0]);
+                _arrSpawnedObject.RemoveAt(0);
         }
     }
 }

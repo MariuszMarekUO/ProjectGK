@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private ParticleSystem _smokeParticle;
     [SerializeField] private Slider _powerSlider;
     [SerializeField] private TextMeshProUGUI _helperText;
+    [SerializeField] private GameObject _meneger;
 
     private int _spaceBarCount = 0;
     private bool _animationRunning = false;
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour
                     _playerStamina.enabled = true;
                     _helperText.gameObject.SetActive(false);
                     _powerSlider.gameObject.SetActive(false);
+                    _player.GetComponent<DistanceMenager>().AllowDistance();
                     break;
             }
             _spaceBarCount++;
