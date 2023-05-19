@@ -20,8 +20,7 @@ public class CannonController : MonoBehaviour
 
     [SerializeField] private Vector3 _xyz;
 
-    private bool _playerInCannon = true;
-    private int _spacebarCount = 0;
+    public bool _playerInCannon = true;
 
     private Vector3 _fireDirection;
 
@@ -35,19 +34,6 @@ public class CannonController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            switch (_spacebarCount)
-            {
-                case 0:
-                    StartCoroutine(RotateSlingshot());
-                    break;
-                case 1:
-                    _playerInCannon = false;
-                    break;
-            }
-            _spacebarCount++;
-        }
         if (Input.GetKeyDown(KeyCode.S))
         {
             _fireDirection = _cannonTube.transform.forward + _xyz;
@@ -70,14 +56,14 @@ public class CannonController : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         _fireDirection *= _powerValue;
-        _rb.gameObject.transform.parent = null;
+        _rb.gameObject.transform.SetParent(null);
         _rb.isKinematic = false;
         _rb.velocity = _fireDirection;
         Debug.DrawRay(_cannonTube.transform.position, _fireDirection, Color.red, 30);
     }
 
     private float timer = 0f;
-    private IEnumerator RotateSlingshot()
+    public IEnumerator RotateCannon()
     {
         while (_playerInCannon)
         {
