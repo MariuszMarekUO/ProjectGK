@@ -10,6 +10,8 @@ public class DistanceMenager : MonoBehaviour
 
     private float _distance;
 
+    private bool notYet = true;
+
     public float Distance
     {
         get { return _distance; }
@@ -29,8 +31,14 @@ public class DistanceMenager : MonoBehaviour
 
     void Update()
     {
-        _distance = _startposition - transform.position.z;
+        if (notYet) { return; }
+        _distance = transform.position.z - _startposition;
         _distanceDec = Decimal.Round(((decimal)(_distance)), 2);
         distanceText.text = "Distance: " + _distanceDec;
+    }
+
+    public void AllowDistance()
+    {
+        notYet = false;
     }
 }
