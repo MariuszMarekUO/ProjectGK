@@ -28,17 +28,17 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(animator!= null)
-        {
-            if(Input.GetKeyUp(KeyCode.Space)) 
-            {
-                animator.SetBool("isJump", true);
-            }
-            else
-            {
-                animator.SetBool("isJump", false);
-            }
-        }
+        //if(animator!= null)
+        //{
+        //    if(Input.GetKeyUp(KeyCode.Space)) 
+        //    {
+        //        animator.SetBool("isJump", true);
+        //    }
+        //    else
+        //    {
+        //        animator.SetBool("isJump", false);
+        //    }
+        //}
     }
 
     private void FixedUpdate()
