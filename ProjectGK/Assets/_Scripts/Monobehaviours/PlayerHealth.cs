@@ -3,9 +3,8 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] Image[] hearts;
-    [SerializeField] Sprite fullHeart;
-    [SerializeField] Sprite emptyHeart;
+    [SerializeField] Animator[] hearts;
+    [SerializeField] GameMenager gameMenager;
 
     private int _health = 3;
 
@@ -17,32 +16,17 @@ public class PlayerHealth : MonoBehaviour
         set { _hasProtectiveShield = value; }
     }
 
-    void Start()
-    {
-        foreach(Image image in hearts)
-        {
-            image.sprite = fullHeart;
-        }
-    }
-
     public void TakeDamage()
     {
         if (!_hasProtectiveShield)
         {
             _health--;
 
-            foreach (Image image in hearts)
-            {
-                image.sprite = emptyHeart;
-            }
-            for (int i = 0; i < _health; i++)
-            {
-                hearts[i].sprite = fullHeart;
-            }
+            hearts[_health].SetBool("HeartLost", true);
 
             if (_health <= 0)
             {
-                // gameover
+                gameMenager.EndGame();
             }
         }
         else
