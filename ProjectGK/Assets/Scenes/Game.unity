@@ -19556,9 +19556,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5254303736736195680, guid: 369085356ee1088479bafbce052a2458, type: 3}
     - target: {fileID: 5254303736736195681, guid: 369085356ee1088479bafbce052a2458, type: 3}
+      propertyPath: hearts.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254303736736195681, guid: 369085356ee1088479bafbce052a2458, type: 3}
       propertyPath: pickUps.Array.size
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5254303736736195681, guid: 369085356ee1088479bafbce052a2458, type: 3}
+      propertyPath: hearts.Array.data[0]
+      value: 
+      objectReference: {fileID: 7783124647148166648, guid: b2e24ab2c13a04445a78cc1ac8f8df43, type: 3}
     - target: {fileID: 5254303736736195681, guid: 369085356ee1088479bafbce052a2458, type: 3}
       propertyPath: pickUps.Array.data[0]
       value: 

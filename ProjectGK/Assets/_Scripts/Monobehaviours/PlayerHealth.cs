@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -33,5 +32,10 @@ public class PlayerHealth : MonoBehaviour
         {
             _hasProtectiveShield = false;
         }
+    }
+
+    public void AddHeart()
+    {
+        hearts[_health].SetBool("HeartGained", true);
     }
 }
