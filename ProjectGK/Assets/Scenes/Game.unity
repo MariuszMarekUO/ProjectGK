@@ -14552,7 +14552,7 @@ PlayableDirector:
   - key: {fileID: -7267247248419628670, guid: 578d9f482a25c744faa7f7b1be41d6c9, type: 2}
     value: {fileID: 963194229}
   - key: {fileID: -5614106181297627392, guid: 578d9f482a25c744faa7f7b1be41d6c9, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 1148217236}
   - key: {fileID: -7507669668711612149, guid: 578d9f482a25c744faa7f7b1be41d6c9, type: 2}
     value: {fileID: 963194232}
   - key: {fileID: -4860493636454956923, guid: 578d9f482a25c744faa7f7b1be41d6c9, type: 2}
@@ -15600,6 +15600,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1518776247}
     - target: {fileID: 6377955245996913640, guid: a59a7345c25a3fb478ed76a6678423c8, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 1332997684}
+    - target: {fileID: 6377955245996913640, guid: a59a7345c25a3fb478ed76a6678423c8, type: 3}
       propertyPath: gameMenager
       value: 
       objectReference: {fileID: 1787558440}
@@ -15704,6 +15708,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6723328580532560272, guid: a59a7345c25a3fb478ed76a6678423c8, type: 3}
   m_PrefabInstance: {fileID: 1148217230}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1148217236
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148217231}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dc6ab0104afa7bb49bd128d903808946, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1198888542
 GameObject:
   m_ObjectHideFlags: 0

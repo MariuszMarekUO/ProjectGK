@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float _movementSpeed;
 
-    private Animator animator;
+    [SerializeField] private Animator _animator;
 
     Vector3 right;
     Vector3 rightRelativeHorizontal;
@@ -23,22 +23,21 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        //if(animator!= null)
-        //{
-        //    if(Input.GetKeyUp(KeyCode.Space)) 
-        //    {
-        //        animator.SetBool("isJump", true);
-        //    }
-        //    else
-        //    {
-        //        animator.SetBool("isJump", false);
-        //    }
-        //}
+        if (_animator != null)
+        {
+            if (Input.GetButton("Jump"))
+            {
+                _animator.SetBool("isJump", true);
+            }
+            else
+            {
+                _animator.SetBool("isJump", false);
+            }
+        }
     }
 
     private void FixedUpdate()

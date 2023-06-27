@@ -69,7 +69,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b032e003bcf66ec4798792d8d0255134, type: 3}
       propertyPath: m_Name
-      value: pig
+      value: pig Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7926839288223873370, guid: b032e003bcf66ec4798792d8d0255134, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b032e003bcf66ec4798792d8d0255134, type: 3}
+--- !u!1 &7100518671346478069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b032e003bcf66ec4798792d8d0255134, type: 3}
+  m_PrefabInstance: {fileID: 7947575492409792164}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7984447488564311920
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7100518671346478069}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6c49ecb8709fb024685a81f7394247bb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
