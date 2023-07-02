@@ -20,7 +20,7 @@ public class SpawnObject : MonoBehaviour
     // zmienne
     private static List<GameObject> _arrSpawnedObject = new List<GameObject>();
     private static int _id = 0;
-    private int _size = 65,
+    private int _size = 100,
                 _currPos,
                 _variant,
                 _probabilityObstacle, 
@@ -28,10 +28,10 @@ public class SpawnObject : MonoBehaviour
 
     private bool _isDone = false;
 
-    private float _rangeX = 5,
+    private float _rangeX = 30,
                 _rangeY = 75,
-                _rangeZ = 150,
-                countPickUps = 3;
+                _rangeZ = 500,
+                countPickUps = 4;
     private int _searchPref;
 
     private void Start()
@@ -42,7 +42,6 @@ public class SpawnObject : MonoBehaviour
         // pocz¹tkowe spawnienie elementów
         if ((firstObject != null) && !_isDone)
         {
-            Debug.Log("WYKONA£O SIE");
             _arrSpawnedObject.Add(firstObject);
             //_arrSpawnedObject[0].name = "Obiekt " + (-1);
             _isDone = true;

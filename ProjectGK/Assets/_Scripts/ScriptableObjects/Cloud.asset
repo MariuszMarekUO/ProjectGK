@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb22113c45221654a8277bf818100c8d, type: 3}
+  m_Name: Cloud
+  m_EditorClassIdentifier: 
+  prefabVariants:
+  - {fileID: 8001997219341763647, guid: 6727c1ccd7d431b4da68dfe8b7c6fb32, type: 3}
+  - {fileID: 6321655338968545171, guid: abdf8e0ff34721f4e8383598490c2e83, type: 3}
+  - {fileID: 7057136191481304216, guid: 7188cfddbbea9a748ad7927ddbf7fd30, type: 3}
+  - {fileID: 8243437811587817211, guid: d27953c3cc6c5b045b1b7261ef40e70d, type: 3}
+  - {fileID: 6480717185569824660, guid: 40e7d8ee35a31374db26d711d833cfd7, type: 3}
+  - {fileID: 7861023273502149980, guid: 681cf2f89ebb47147850142504affaf4, type: 3}
+  - {fileID: 5387641935988163522, guid: d05243a10a6a9aa488d56780ddb23525, type: 3}
+  _type: 2

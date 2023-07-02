@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     Vector3 rightRelativeHorizontal;
 
     private Vector3 _currentVelocity;
-    [SerializeField] private Vector3 _vectorRegulation;
+    [SerializeField] private Vector3 lookRot;
 
     [SerializeField] GameMenager gameMenager;
 
@@ -27,7 +27,8 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         MoveRelativeToCamera();
-        //transform.rotation = Quaternion.LookRotation(_rb.velocity + _vectorRegulation);
+        lookRot = _rb.velocity;
+        transform.rotation = Quaternion.LookRotation(lookRot);
     }
 
     private void MoveRelativeToCamera()
